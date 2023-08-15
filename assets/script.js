@@ -3,7 +3,7 @@ var fiveDaySection =document.querySelector("#five-day-forecast")
 var searchInput = document.querySelector("#search-input")
 var searchButton = document.querySelector("#search-btn")
 var weatherContainer = document.querySelector("#main-weather-container")
-var apiKey = 'df3fb9934a7d8ebae97c6749b588071a'
+var apiKey = 'bc6ba4743737d1c5fae7d620e9590175'
 
 function search(cityName){
     console.log("click")
