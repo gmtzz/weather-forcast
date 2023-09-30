@@ -1,0 +1,23 @@
+header{
+    background-color: #175676;
+    padding: 20px;
+    margin-bottom: 2vh;
+}
+#five-day-forecast{
+    display: flex;
+    justify-content: end;
+    gap: .5rem;
+    margin-top: 2vh;
+}
+
+.forecast-card{
+    width:250px;
+}
+
+.history-search{
+    margin-top: 2vh;
+}
+.history-btn{
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
