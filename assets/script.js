@@ -1,19 +1,22 @@
-
+// Select HTMl elements using ids to store them in variables
 var fiveDaySection =document.querySelector("#five-day-forecast")
 var searchInput = document.querySelector("#search-input")
 var searchButton = document.querySelector("#search-btn")
 var weatherContainer = document.querySelector("#main-weather-container")
 var historyContainer=document.querySelector(".history-search")
+//API key for weather forecast data
 var apiKey = 'bc6ba4743737d1c5fae7d620e9590175'
+// Array to store search history
 var cityArray=[]
 
+// Create and displays history button
 var getHistory =(searchHistory)=>{
     var btn= document.createElement("button")
     btn.setAttribute("class", "btn btn-warning history-btn")
     btn.textContent=searchHistory
     historyContainer.append(btn)
 }
-
+// Function to do search using the city name
 var searchHistory= JSON.parse(localStorage.getItem("history")) || []
 for (let i = 0; i < searchHistory.length; i++) {
    getHistory(searchHistory[i])
@@ -84,7 +87,7 @@ function search(cityName){
 
 }
 
-
+// Function to story a city name in the history
 function storage(city){
     searchHistory=JSON.parse(localStorage.getItem("history")) ||[]
     if(!cityArray.includes(city)){
@@ -93,7 +96,7 @@ function storage(city){
         getHistory(city)
     }
 }
-
+// Search Button event listener
 searchButton.addEventListener("click",function(e){
     e.preventDefault()
     var cityName = searchInput.value.trim()
@@ -101,7 +104,7 @@ searchButton.addEventListener("click",function(e){
     searchInput.value=""
     storage(cityName)
 })
-
+// History Button click event listener
 historyContainer.addEventListener("click", (e)=>{
     e.preventDefault()
     weatherContainer.innerHTML=""
